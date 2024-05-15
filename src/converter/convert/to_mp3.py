@@ -1,4 +1,4 @@
-import pika, json, tempfile,os 
+import pika, json, tempfile, os 
 from bson.objectid import ObjectId 
 import moviepy.editor 
 
@@ -19,7 +19,7 @@ def start(message, fs, fs_mp3s, fs_videos, channel):
   tf.close()
   
   # Write audio to own file
-  tf_path = tempfile.gettempdir() + f"/{message['video_fid']}.mps3"
+  tf_path = tempfile.gettempdir() + f"/{message['video_fid']}.mp3"
   audio.write_audiofile(tf_path)
   
   # Save the file to mongo
