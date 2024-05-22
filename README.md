@@ -19,7 +19,9 @@
 #### Converter 
 - The consumer requesting messages from the broker queue to convert videos to mp3 `moviepy`
 - Create videos and mp3 queues with RabbitMQ: NOTE -> start the minikube tunnel before connecting to the internals
-- 
+- Download a youtube video to test RabbitMQ queue`brew install yt-dlp` or `brew install youtube-dl` then run to download `youtube-dl https://youtu.be/psuh8doaUjs`
+- `GATEWAY` Login ` curl -X POST http://mp3converter.com/login -u XXXXXX.com:AdminXXX` to get a token.
+- `CONVERTER` Upload video using the bearer token `curl -X POST -F 'FILE' -H 'Authorization: Bearer XXXXXX' http://mp3converter.com/upload`
 #### Docker Images
 - Auth service docker images: `docker build .` , `docker tag XXXXXX lawrencejews/auth:latest` and `docker push lawrencejews/auth:latest`
 - Deploy Auth image to Kubernetes cluster from the manifests `kubectl apply -f ./` & Clean up `kubectl delete -f ./ `

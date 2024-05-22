@@ -20,9 +20,8 @@ def login():
   
   # Check database for username and password
   cur = mysql.connection.cursor()
-  res = cur.execute(
-    "SELECT email, password FROM user WHERE email=%s", (auth.username,)
-  )
+  sql = """ SELECT email, password FROM user WHERE email=%s """
+  res = cur.execute(sql, (auth.username,))
 
   if res > 0:
     user_row = cur.fetchone()

@@ -1,6 +1,7 @@
 # Mac OS
 .DS_Store
 .vs_code
+video1.mp4
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
